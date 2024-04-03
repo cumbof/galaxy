@@ -61,7 +61,7 @@ def conda_link() -> str:
             url = "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-x86_64.sh"
     else:
         if sys.maxsize > 2**32:
-            if "arm64" in platform.platform():
+            if "arm64" in platform.platform() or "aarch64" in platform.platform():
                 url = "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-aarch64.sh"
             else:
                 url = "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh"
